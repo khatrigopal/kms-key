@@ -5,30 +5,45 @@ variable "key_alias" {
 
 
 
-data "aws_iam_policy_document" "kms_policy" {
+data "aws_iam_policy_document" "kms" {
+  # Allow root users full management access to key
   statement {
-    sid    = "Enable IAM User Permissions"
     effect = "Allow"
-
-    principals {
-      type        = "AWS"
-      identifiers = ["*"]
-    }
-
     actions = [
       "kms:*"
     ]
+    resources = ["*"]
+    principals {
+      type        = "AWS"
+      identifiers = ["arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"]
+    }
+  }
 
-    resources = [
-      aws_kms_key.kms_key.arn
+  # Allow other accounts limited access to key
+  statement {
+    effect = "Allow"
+    actions = [
+      "kms:CreateGrant",
+      "kms:Encrypt",
+      "kms:Decrypt",
+      "kms:ReEncrypt*",
+      "kms:GenerateDataKey*",
+      "kms:DescribeKey",
     ]
+
+    resources = ["*"]
+
+    # AWS account IDs that need access to this key
+    principals {
+      type        = "AWS"
+      identifiers = ${data.aws_caller_identity.current.account_id}
+    }
   }
 }
-
 resource "aws_kms_key" "kms_key" {
   description             = "KMS key for encrypting sensitive data"
   enable_key_rotation     = true
-  policy                  = data.aws_iam_policy_document.kms_policy.json
+  policy                  = data.aws_iam_policy_document.kms.json
   deletion_window_in_days = 30
 }
 
