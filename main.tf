@@ -1,5 +1,5 @@
 module "kms_key" {
-  source     = "./module/kms-key"
+  source     = "./modules/kms-key"
   key_alias  = "my-kms-key"
 }
 
