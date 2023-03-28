@@ -3,7 +3,7 @@ name: Terraform GitHub Actions
 
 on:
    push:
-    branches: [master]
+    branches: [main]
 jobs:
   Deploy_Resources:
     runs-on: ubuntu-20.04
