@@ -1,3 +1,5 @@
+data "aws_caller_identity" "current" {}
+
 variable "key_alias" {
   description = "The alias to associate with the KMS key"
   type        = string
