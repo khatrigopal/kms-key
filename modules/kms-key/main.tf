@@ -36,7 +36,7 @@ data "aws_iam_policy_document" "kms" {
     # AWS account IDs that need access to this key
     principals {
       type        = "AWS"
-      identifiers = ${data.aws_caller_identity.current.account_id}
+      identifiers = data.aws_caller_identity.current.account_id
     }
   }
 }
