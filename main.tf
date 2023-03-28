@@ -6,6 +6,7 @@ module "kms_key" {
 variable "key_alias" {
   description = "The alias to associate with the KMS key"
   type        = string
+  default = ""
 }
 
 output "kms_key_id" {
