@@ -1,0 +1,38 @@
+sagemaker endpoint monitoring metrics in cloudwatch
+
+
+Amazon SageMaker endpoints can be monitored using Amazon CloudWatch, which provides a range of metrics to help you monitor the health and performance of your endpoints. These metrics can be used to detect and diagnose issues with your endpoints, as well as to track their performance over time.
+
+Here are some of the endpoint monitoring metrics available in CloudWatch:
+
+Invocations: This metric tracks the number of times the endpoint has been invoked over a specified time period.
+
+Errors: This metric tracks the number of errors that occur during endpoint invocations.
+
+Latency: This metric tracks the time it takes for an endpoint to process a request, from the time the request is received until a response is sent.
+
+CPU and memory utilization: These metrics track the percentage of CPU and memory usage by the endpoint during processing.
+
+Throttling: This metric tracks the number of requests that are rejected due to throttling, which occurs when the endpoint is unable to handle the volume of incoming requests.
+
+HTTP status codes: This metric tracks the distribution of HTTP status codes returned by the endpoint, such as 200 for successful requests or 404 for not found.
+
+You can view these metrics in the CloudWatch console or programmatically using the CloudWatch APIs. You can also set up CloudWatch alarms to notify you if any of these 
+
+_____________________________________
+
+how to create aws cloudwatch dashboard for sagemaker endpoint monitoring
+
+
+To create an AWS CloudWatch dashboard for SageMaker endpoint monitoring, you can follow these steps:
+
+Open the CloudWatch console in the AWS Management Console.
+Click on the "Dashboards" link in the left navigation menu, and then click on the "Create Dashboard" button.
+Give your dashboard a name and click on the "Create Dashboard" button.
+On the dashboard page, click on the "Add widget" button to add a widget to the dashboard.
+Select the "SageMaker Endpoint Metrics" option from the widget gallery.
+Select the appropriate SageMaker endpoint from the dropdown list, and choose the metric you want to monitor (such as "Invocations" or "Errors").
+Customize the widget settings as needed, such as the time range, statistic type, and visualization type.
+
+_______________________________________________________________
+
