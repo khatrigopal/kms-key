@@ -36,3 +36,18 @@ Customize the widget settings as needed, such as the time range, statistic type,
 
 _______________________________________________________________
 
+
+
+Amazon SageMaker endpoint monitoring allows you to track the performance of your model endpoint in real-time and detect anomalies or deviations from the expected behavior. Amazon CloudWatch is a monitoring and observability service that provides metrics and logs for AWS resources and applications. You can use CloudWatch to monitor your SageMaker endpoints and set up alarms to notify you when certain metrics reach a specified threshold.
+
+To set up endpoint monitoring with CloudWatch, you can follow these steps:
+
+Create a monitoring schedule: In the Amazon SageMaker console, create a monitoring schedule for your endpoint. This schedule specifies the data capture and analysis configuration for the endpoint, including the frequency of monitoring, the data capture method, and the monitoring image to use.
+
+Enable monitoring: After you create a monitoring schedule, enable monitoring for the endpoint. This allows SageMaker to capture the required data and send it to CloudWatch.
+
+Create a CloudWatch dashboard: In the CloudWatch console, create a dashboard to visualize the metrics and logs from your endpoint. You can use the SageMaker-provided dashboard template or create your own custom dashboard.
+
+Set up alarms: Set up alarms in CloudWatch to notify you when metrics from your endpoint reach a specified threshold. For example, you can set up an alarm to notify you when the endpoint's error rate exceeds a certain percentage.
+
+With these steps, you can monitor your SageMaker endpoint using CloudWatch and take proactive measures to maintain its performance and availability.
